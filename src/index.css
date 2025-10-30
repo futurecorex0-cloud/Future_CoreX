@@ -1,0 +1,210 @@
+/* 🌐 FUTURE COREX 3D DESIGN THEME */
+/* ———————————————— GLOBAL BASE ———————————————— */
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #1e1e2f;
+  background: linear-gradient(135deg, #fafafa, #f7efff);
+  scroll-behavior: smooth;
+  --glow-primary: #a855f7;
+  --glow-secondary: #ec4899;
+  --shadow-color: rgba(0, 0, 0, 0.15);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove margin/padding globally */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  perspective: 1200px;
+}
+
+/* ———————————————— HEADER 3D NAVBAR ———————————————— */
+.navbar-gradient {
+  position: relative;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899, #f97316);
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+}
+
+/* Animated gradient movement */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating glass layer on navbar */
+.navbar-gradient::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(circle at top center, rgba(255,255,255,0.25), transparent);
+  filter: blur(20px);
+  transform: translateZ(-1px);
+}
+
+/* ———————————————— NAV LINKS ———————————————— */
+.navbar-link {
+  position: relative;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.navbar-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--glow-primary), 0 0 20px var(--glow-secondary);
+  transform: translateY(-3px);
+}
+
+/* Active link underline glow */
+.navbar-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--glow-primary), var(--glow-secondary));
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--glow-primary);
+}
+
+/* ———————————————— LOGO ———————————————— */
+.logo {
+  height: 5rem;
+  width: auto;
+  filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.6));
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.logo:hover {
+  transform: rotateY(15deg) scale(1.1);
+  filter: drop-shadow(0 0 1.5rem var(--glow-secondary));
+}
+
+/* ———————————————— CARD / CONTENT STYLES ———————————————— */
+.card {
+  background: linear-gradient(135deg, #ffffffdd, #f9fafb);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  transform: translateZ(0);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(3deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ———————————————— FOOTER GLOW ———————————————— */
+footer {
+  background: linear-gradient(135deg, #1e1b4b, #4c1d95, #9d174d);
+  color: #e5e7eb;
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before,
+footer::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+}
+
+footer::before {
+  width: 300px;
+  height: 300px;
+  background: #ec4899;
+  top: -100px;
+  left: -100px;
+}
+
+footer::after {
+  width: 250px;
+  height: 250px;
+  background: #8b5cf6;
+  bottom: -80px;
+  right: -80px;
+}
+
+/* ———————————————— BUTTONS ———————————————— */
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.8em 1.8em;
+  font-weight: 600;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.6);
+}
+
+/* ———————————————— SECTIONS ———————————————— */
+section {
+  padding: 5rem 2rem;
+  scroll-margin-top: 100px;
+  position: relative;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Floating gradient background */
+section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 300px;
+  background: radial-gradient(circle, rgba(216, 180, 254, 0.2), transparent);
+  filter: blur(100px);
+  z-index: -1;
+}
+
+/* ———————————————— ANIMATIONS ———————————————— */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ———————————————— RESPONSIVE ———————————————— */
+@media (max-width: 768px) {
+  .navbar-gradient {
+    border-radius: 0 0 50px 50px;
+  }
+  .logo {
+    height: 3.5rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+}
