@@ -14,7 +14,6 @@ import Contact from "./Screens/Contact";
 export default function App() {
   const [activeScreen, setActiveScreen] = useState("Home");
 
-  // ✅ Screen Renderer
   const renderScreen = () => {
     const screens = {
       Home: <Home setActiveScreen={setActiveScreen} />,
@@ -31,10 +30,10 @@ export default function App() {
 
     const toggle = document.querySelector(".navbar-toggler");
     if (toggle && window.getComputedStyle(toggle).display !== "none") {
-      toggle.click(); // closes the collapse menu
+      toggle.click();
     }
   };
-
+//new comment
   return (
     <div
       className="d-flex flex-column min-vh-100 text-light"
