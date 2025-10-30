@@ -160,7 +160,7 @@ const Footer = () => {
 
   const socialLinks = [
     { href: "https://www.facebook.com/share/1GLXXnBGMr/", icon: faFacebookF },
-    { href: "https://twitter.com", icon: faTwitter },
+    { href: "https://x.com/FutureCoreX0", icon: faTwitter },
     { href: "https://www.linkedin.com/company/108158124/admin/dashboard/", icon: faLinkedinIn },
     { href: "https://rss.com", icon: faRss },
     { href: "https://dribbble.com", icon: faDribbble },
